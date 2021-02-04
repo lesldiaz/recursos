@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="BayesianNetwork">
+    <Variables>
+      <Variable name="Ejercicio" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="213" y="153" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="nada" />
+          <State name="mucho" />
+          <State name="poco" />
+        </States>
+      </Variable>
+      <Variable name="Presion Arterial" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="202" y="395" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="normal" />
+          <State name="alta" />
+          <State name="baja" />
+        </States>
+      </Variable>
+      <Variable name="Enfermedad del Corazon" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="422" y="245" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="ausente" />
+          <State name="presente" />
+        </States>
+      </Variable>
+      <Variable name="Dieta" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="668" y="147" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="ausente" />
+          <State name="Saludable" />
+        </States>
+      </Variable>
+      <Variable name="Dolor de Pecho" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="672" y="388" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="ausente" />
+          <State name="presente" />
+        </States>
+      </Variable>
+      <Variable name="Acidez" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="870" y="263" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="presente" />
+          <State name="ausente" />
+        </States>
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="Ejercicio" />
+        <Variable name="Enfermedad del Corazon" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Presion Arterial" />
+        <Variable name="Enfermedad del Corazon" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Dieta" />
+        <Variable name="Enfermedad del Corazon" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Dieta" />
+        <Variable name="Acidez" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Dolor de Pecho" />
+        <Variable name="Enfermedad del Corazon" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Dolor de Pecho" />
+        <Variable name="Acidez" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Ejercicio" />
+        </Variables>
+        <Values>0.33559932020393884 0.33859842047385785 0.32580225932220336</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Presion Arterial" />
+        </Variables>
+        <Values>0.33939818054583626 0.33639908027591725 0.32420273917824655</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Enfermedad del Corazon" />
+          <Variable name="Ejercicio" />
+          <Variable name="Presion Arterial" />
+          <Variable name="Dolor de Pecho" />
+          <Variable name="Dieta" />
+        </Variables>
+        <Values>0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504 0.4938012397520496 0.5061987602479504</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Dieta" />
+        </Variables>
+        <Values>0.500999800039992 0.499000199960008</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Dolor de Pecho" />
+        </Variables>
+        <Values>0.496000799840032 0.503999200159968</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Acidez" />
+          <Variable name="Dieta" />
+          <Variable name="Dolor de Pecho" />
+        </Variables>
+        <Values>0.4896020795840832 0.5103979204159168 0.4896020795840832 0.5103979204159168 0.4896020795840832 0.5103979204159168 0.4896020795840832 0.5103979204159168</Values>
+      </Potential>
+    </Potentials>
+    <AdditionalProperties>
+      <Property name="hasElviraProperties" value="yes" />
+    </AdditionalProperties>
+  </ProbNet>
+</ProbModelXML>

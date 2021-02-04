@@ -1,0 +1,30 @@
+ENUNCIADO:
+
+El entrenamiento y testeo de la red neuronal estará implementada en el agente 1 (significa que el agente 1 guardara el modelo de la red neuronal e informará al agente 3 que la red esta entrenada y testeada)
+
+El agente 2 monitorea los valores: Ancho de banda, memoria, CPU y las banderas de sincronización. Esos valores son parte de la red bayesiana ejecutar la red bayesiana en el agente 2.
+
+El agente 3 espera los resultados del agente 1 ("red neuronal entrenada y testeada") y del agente 2 (%).
+
+El agente 3 informa el resultado de la red neuronal al agente 4 y de la red bayesiana al agente 5.
+
+El agente 4 compara los resultados de la red neuronal.
+El agente 4 indentifica los 3 tipos de ataque que se han almacenado en el archivo "ConsolidatedFinal.arff" (predecir ataque)
+El agente 4 envia la predicción de los ataques al agente 6.
+
+El agente 5 compara los resultados de la red bayesiana y obtiene el de mayor probabilidad (variables de interes: Synflood, Normal, Slowlorishhttpdos).
+El agente 5 envía el de mayor probabilidad al agente 6.
+
+Si el agente 6 identifica el ataque (slowlorishttpdos o synflood) tanto en la red bayesiana y red neuronal entonces enviar un mensaje al usuario diciendo "bloquear ip"
+caso contrario enviar como "normal".
+
+
+
+Ejecutar el sistema con las siguientes entradas:
+1.- ancho de banda: alto, memoria: medio, cpu: alto, bandera: no.
+2.- ancho de banda: alto, memoria: medio, cpu: alto, bandera: si.
+3.- ancho de banda: alto, memoria: alto, cpu: alto, bandera: no.
+
+
+
+QUE LA FUERZA LOS ACOMPAÑE!!!!:)

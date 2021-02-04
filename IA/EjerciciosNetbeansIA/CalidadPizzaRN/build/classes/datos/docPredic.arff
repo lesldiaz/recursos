@@ -1,0 +1,18 @@
+@RELATION pizza
+
+@ATTRIBUTE tipo	{H,P4}
+@ATTRIBUTE masa	REAL
+@ATTRIBUTE queso	REAL
+@ATTRIBUTE champ	REAL
+@ATTRIBUTE chorizo	REAL
+@ATTRIBUTE carne	REAL
+@ATTRIBUTE tocino	REAL
+@ATTRIBUTE jamon	REAL
+@ATTRIBUTE pinia	REAL
+@ATTRIBUTE class 	{great,good,bad}
+
+@DATA
+P4,55.0,15.93,19.0,3.0,50.0,4.77,0.0,0.0,?
+%
+%
+%

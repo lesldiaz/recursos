@@ -1,0 +1,35 @@
+#include<unist.h>
+#include <string.h>
+
+struct param{
+char *
+}
+
+
+
+void hiloMensaje (struct param *mensa){
+printf("is %d\n",mensa->frase,mensa->numero);
+}
+
+int main (){
+pthread_t thd1,thd2;
+struct param param1 = ("Soy el hilo:",1);
+struct param param2 = ("Digo otra cosa",2);
+
+//creamos dos hilos
+
+//la funcion la pasaremos como (void*)nombrefuncion.
+//Es decir, hacemos un cast a void
+//Tambien es importante realizar esto con la direccion de memoria de la variable
+//que contiene los parametros.
+
+
+pthread_create (&thd1,NULL,(void*)hiloMensaje,(void*)&param1);
+pthread_create (&thd2,NULL,(void*)hiloMensaje,(void*)&param2);
+//esperamos la finalizacion de los hilos
+
+pthread_join(thd1,NULL);
+pthread_join(thd2,NULL);
+printf("Han finalizado los thread.\n");
+
+}

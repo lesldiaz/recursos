@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<stdlib.h>
+//Programa que abre un archivo y comprueba si esta vacio o no
+int main(){
+FILE *fp;
+long size;
+printf("Nombre del Archivo: archivo1.txt \n");
+printf("Resultado:\n");
+fp=fopen("archivo1.txt","r");
+if(fp==NULL){
+printf("Error al abrir archivo\n");
+exit(1);
+}else if(!ftell(fp)==0){
+printf("Archivo Vacio");
+} else {
+while (!feof(fp)){
+printf("%c",getc(fp));
+}
+}
+fclose(fp);
+return 0;
+}

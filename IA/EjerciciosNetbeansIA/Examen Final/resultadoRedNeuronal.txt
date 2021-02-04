@@ -1,0 +1,19 @@
+No dejar hiddenLayers como automático.
+
+********Training *********
+
+Correctly Classified Instances       22294               99.3715 %
+Incorrectly Classified Instances       141                0.6285 %
+
+mio
+Correctly Classified Instances       22298               99.3893 %
+Incorrectly Classified Instances       137                0.6107 %
+
+*********Testing*********
+
+Correctly Classified Instances        2471               99.5167 %
+Incorrectly Classified Instances        12                0.4833 %
+
+Correctly Classified Instances        2468               99.5161 %
+Incorrectly Classified Instances        12                0.4839 %
+   

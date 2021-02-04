@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="BayesianNetwork">
+    <Comment showWhenOpeningNetwork="false"><![CDATA[<<Double click to add/modify comment>>]]></Comment>
+    <Variables>
+      <Variable name="ancho_banda" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="571" y="152" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="low" />
+          <State name="medium" />
+          <State name="high" />
+        </States>
+      </Variable>
+      <Variable name="memoria" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="831" y="152" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="low" />
+          <State name="medium" />
+          <State name="high" />
+        </States>
+      </Variable>
+      <Variable name="cpu" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="1058" y="151" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="low" />
+          <State name="medium" />
+          <State name="high" />
+        </States>
+      </Variable>
+      <Variable name="flags_syn" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="1318" y="146" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="SYNFLOOD" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="648" y="413" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="NORMAL" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="923" y="414" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+      <Variable name="SLOWLORISHTTPDOS" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="1204" y="411" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="no" />
+          <State name="yes" />
+        </States>
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="ancho_banda" />
+        <Variable name="SYNFLOOD" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ancho_banda" />
+        <Variable name="NORMAL" />
+      </Link>
+      <Link directed="true">
+        <Variable name="ancho_banda" />
+        <Variable name="SLOWLORISHTTPDOS" />
+      </Link>
+      <Link directed="true">
+        <Variable name="memoria" />
+        <Variable name="NORMAL" />
+      </Link>
+      <Link directed="true">
+        <Variable name="memoria" />
+        <Variable name="SYNFLOOD" />
+      </Link>
+      <Link directed="true">
+        <Variable name="memoria" />
+        <Variable name="SLOWLORISHTTPDOS" />
+      </Link>
+      <Link directed="true">
+        <Variable name="cpu" />
+        <Variable name="SLOWLORISHTTPDOS" />
+      </Link>
+      <Link directed="true">
+        <Variable name="cpu" />
+        <Variable name="NORMAL" />
+      </Link>
+      <Link directed="true">
+        <Variable name="cpu" />
+        <Variable name="SYNFLOOD" />
+      </Link>
+      <Link directed="true">
+        <Variable name="flags_syn" />
+        <Variable name="SLOWLORISHTTPDOS" />
+      </Link>
+      <Link directed="true">
+        <Variable name="flags_syn" />
+        <Variable name="NORMAL" />
+      </Link>
+      <Link directed="true">
+        <Variable name="flags_syn" />
+        <Variable name="SYNFLOOD" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="ancho_banda" />
+        </Variables>
+        <Values>0.1 0.25 0.65</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="memoria" />
+        </Variables>
+        <Values>0.1 0.25 0.65</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="cpu" />
+        </Variables>
+        <Values>0.1 0.25 0.65</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="flags_syn" />
+        </Variables>
+        <Values>0.001 0.999</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="SYNFLOOD" />
+          <Variable name="ancho_banda" />
+          <Variable name="memoria" />
+          <Variable name="flags_syn" />
+          <Variable name="cpu" />
+        </Variables>
+        <Values>0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999 0.001 0.999</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="NORMAL" />
+          <Variable name="ancho_banda" />
+          <Variable name="memoria" />
+          <Variable name="flags_syn" />
+          <Variable name="cpu" />
+        </Variables>
+        <Values>0.01 0.99 0.03 0.97 0.06 0.94 0.04 0.96 0.06 0.94 0.1 0.9 0.13 0.87 0.12 0.88 0.15 0.85 0.65 0.35 0.67 0.33 0.7 0.3 0.65 0.35 0.75 0.25 0.8 0.2 0.85 0.15 0.83 0.17 0.81 0.19 0.03 0.97 0.14 0.86 0.12 0.88 0.11 0.89 0.2 0.8 0.19 0.81 0.23 0.77 0.25 0.75 0.32 0.68 0.75 0.25 0.66 0.34 0.8 0.2 0.85 0.15 0.88 0.12 0.89 0.11 0.87 0.13 0.91 0.09 0.92 0.08 0.03 0.97 0.02 0.98 0.08 0.92 0.11 0.89 0.04 0.96 0.06 0.94 0.07 0.93 0.15 0.85 0.32 0.68 0.6 0.4 0.69 0.31 0.66 0.34 0.92 0.08 0.94 0.06 0.95 0.05 0.97 0.03 0.999 0.001 0.9999 1.0E-4</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="SLOWLORISHTTPDOS" />
+          <Variable name="ancho_banda" />
+          <Variable name="memoria" />
+          <Variable name="cpu" />
+          <Variable name="flags_syn" />
+        </Variables>
+        <Values>0.9 0.1 0.89 0.11 0.88 0.12 0.87 0.13 0.72 0.28 0.77 0.23 0.81 0.19 0.62 0.38 0.61 0.39 0.68 0.32 0.67 0.33 0.58 0.42 0.45 0.55 0.4 0.6 0.2 0.8 0.35 0.65 0.24 0.76 0.13 0.87 0.54 0.46 0.3 0.7 0.39 0.61 0.36 0.64 0.3 0.7 0.2 0.8 0.16 0.84 0.03 0.97 0.001 0.999 0.78 0.22 0.69 0.31 0.67 0.33 0.57 0.43 0.13 0.87 0.24 0.76 0.2 0.8 0.25 0.75 0.3 0.7 0.55 0.45 0.22 0.78 0.35 0.65 0.22 0.78 0.35 0.65 0.21 0.79 0.41 0.59 0.35 0.65 0.22 0.78 0.65 0.35 0.43 0.57 0.36 0.64 0.436 0.564 0.35 0.65 0.2 0.8 0.24 0.76 0.11 0.89 0.02 0.98</Values>
+      </Potential>
+    </Potentials>
+    <AdditionalProperties />
+  </ProbNet>
+  <Evidence>
+    <EvidenceCase />
+    <EvidenceCase>
+      <EvidenceCase variable="flags_syn" state="yes" />
+      <EvidenceCase variable="memoria" state="high" />
+      <EvidenceCase variable="cpu" state="high" />
+      <EvidenceCase variable="ancho_banda" state="high" />
+    </EvidenceCase>
+  </Evidence>
+</ProbModelXML>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="BayesianNetwork">
+    <Comment showWhenOpeningNetwork="false"><![CDATA[<<Pulse dos veces para incluir/modificar comentario>>]]></Comment>
+    <Variables>
+      <Variable name="MalestarCuerpo" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="387" y="140" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="ausente" />
+          <State name="leve" />
+          <State name="moderado" />
+          <State name="severo" />
+        </States>
+      </Variable>
+      <Variable name="Fiebre" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="732" y="134" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="bajo" />
+          <State name="medio" />
+          <State name="alto" />
+        </States>
+      </Variable>
+      <Variable name="Gripe" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="447" y="272" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="Peste" />
+          <State name="Nopeste" />
+        </States>
+      </Variable>
+      <Variable name="Neumonia" type="finiteStates" role="chance" isInput="false">
+        <Coordinates x="663" y="277" />
+        <Unit />
+        <Precision>0.01</Precision>
+        <States>
+          <State name="ausente" />
+          <State name="presente" />
+        </States>
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="MalestarCuerpo" />
+        <Variable name="Gripe" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Fiebre" />
+        <Variable name="Gripe" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Fiebre" />
+        <Variable name="Neumonia" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Gripe" />
+        <Variable name="Neumonia" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="MalestarCuerpo" />
+        </Variables>
+        <Values>0.25 0.25 0.25 0.25</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Fiebre" />
+        </Variables>
+        <Values>0.3333333333 0.3333333333 0.3333333333</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Gripe" />
+          <Variable name="MalestarCuerpo" />
+          <Variable name="Fiebre" />
+        </Variables>
+        <Values>0.1 0.9 0.3 0.7 0.4 0.6 0.45 0.55 0.2 0.8 0.35 0.65 0.7 0.3 0.85 0.15 0.31 0.69 0.6 0.4 0.84 0.16 0.95 0.05</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Neumonia" />
+          <Variable name="Gripe" />
+          <Variable name="Fiebre" />
+        </Variables>
+        <Values>0.7 0.3 0.9 0.1 0.6 0.4 0.65 0.35 0.25 0.75 0.5 0.5</Values>
+      </Potential>
+    </Potentials>
+    <AdditionalProperties />
+  </ProbNet>
+  <Evidence>
+    <EvidenceCase />
+    <EvidenceCase>
+      <EvidenceCase variable="MalestarCuerpo" state="severo" />
+      <EvidenceCase variable="Fiebre" state="alto" />
+    </EvidenceCase>
+  </Evidence>
+</ProbModelXML>

@@ -1,0 +1,22 @@
+@relation ConsolidatedTrainData
+
+@attribute frame.len numeric
+@attribute eth.padding numeric
+@attribute tcp.len numeric
+@attribute tcp.seq numeric
+@attribute tcp.srcport numeric
+@attribute tcp.dstport numeric
+@attribute tcp.flags.fin numeric
+@attribute tcp.flags.syn numeric
+@attribute tcp.flags.reset numeric
+@attribute tcp.flags.push numeric 
+@attribute tcp.flags.ack numeric
+@attribute tcp.window_size numeric 
+@attribute tcp.segment_data numeric
+@attribute type {SYNFLOOD,NORMAL,SLOWLORISHTTPDOS}
+
+@data
+
+296,0,230,1,43709,80,1,0,0,1,1,29696,1,?
+66,0,0,1,43929,80,0,0,0,0,1,29696,0,?
+60,0,0,0,12630,80,0,1,0,0,0,512,0,?
